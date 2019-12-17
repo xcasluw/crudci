@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Games extends CI_Controller {
+class Games extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -36,6 +37,7 @@ class Games extends CI_Controller {
 	public function store()
 	{
 		$game = $_POST;
+		$game["user_id"] = $_SESSION["logged_user"]["id"];
 		$this->games_model->store($game);
 		redirect("dashboard");
 	}
@@ -63,6 +65,18 @@ class Games extends CI_Controller {
 	{
 		$this->games_model->destroy($id);
 		redirect("dashboard");
+	}
+
+	public function mygames()
+	{
+		$dados["games"]  = $this->games_model->mygames_index();
+		$dados["title"] = "My Games - CodeIgniter";
+
+		$this->load->view('templates/header', $dados);
+		$this->load->view('templates/nav-top', $dados);
+		$this->load->view('pages/my-games', $dados);
+		$this->load->view('templates/footer', $dados);
+		$this->load->view('templates/js', $dados);
 	}
 
 }

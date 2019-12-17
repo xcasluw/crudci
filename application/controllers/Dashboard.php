@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Dashboard extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -14,7 +15,7 @@ class Dashboard extends CI_Controller {
 	public function index()
 	{
 		$dados["games"]  = $this->games_model->dashboard_index();
-		$dados["users"]  = $this->users_model->index();
+		$dados["users"]  = $this->users_model->dashboard_index();
 		$dados["title"] = "Dashboard - CodeIgniter";
 
 		$this->load->view('templates/header', $dados);
@@ -23,5 +24,5 @@ class Dashboard extends CI_Controller {
 		$this->load->view('templates/footer', $dados);
 		$this->load->view('templates/js', $dados);
 	}
-
+	
 }

@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-		<h2 class="h2">Last 10 Games</h2>
+		<h2 class="h2">Last 5 Games</h2>
 	</div>
 
 	<div class="table-responsive">
@@ -44,7 +44,7 @@
 	</div>
 
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-		<h2 class="h2">Last 10 Users</h2>
+		<h2 class="h2">Last 5 Users</h2>
 	</div>
 
 	<div class="table-responsive">
@@ -77,7 +77,7 @@
 		if(confirm("Deseja apagar este registro?")) {
 			window.location.href = 'games/destroy/'+id;
 		} else {
-			alert("Registro n„o alterado");
+			alert("Registro n√£o alterado");
 			return false;
 		}
 	}
