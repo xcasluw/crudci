@@ -24,5 +24,18 @@ class Dashboard extends CI_Controller
 		$this->load->view('templates/footer', $dados);
 		$this->load->view('templates/js', $dados);
 	}
+
+	public function pesquisar()
+	{
+		$this->load->model("busca_model");
+		$dados["title"] = "Resultado da Pesquisa por " . $_POST["busca"];
+		$dados["resultado"] = $this->busca_model->buscar($_POST);
+
+		$this->load->view('templates/header', $dados);
+		$this->load->view('templates/nav-top', $dados);
+		$this->load->view('pages/resultado', $dados);
+		$this->load->view('templates/footer', $dados);
+		$this->load->view('templates/js', $dados);
+	}
 	
 }
