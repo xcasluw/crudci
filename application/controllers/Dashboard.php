@@ -28,7 +28,7 @@ class Dashboard extends CI_Controller
 	public function pesquisar()
 	{
 		$this->load->model("busca_model");
-		$dados["title"] = "Resultado da Pesquisa por " . $_POST["busca"];
+		$dados["title"] = "Resultado da Pesquisa por *" . $_POST["busca"] . "*";
 		$dados["resultado"] = $this->busca_model->buscar($_POST);
 
 		$this->load->view('templates/header', $dados);

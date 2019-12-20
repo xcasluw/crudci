@@ -23,7 +23,7 @@
 					<tr>
 						<td><?= $game["id"] ?></td>
 						<td><?= $game["name"] ?></td>
-						<td><?= $game["price"] ?></td>
+						<td><?= reais($game["price"]) ?></td>
 						<td><?= $game["category"] ?></td>
 						<td><?= $game["developer"] ?></td>
 						<td>

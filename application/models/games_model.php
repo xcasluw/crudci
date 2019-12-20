@@ -4,7 +4,7 @@
 	{
 		public function index()
 		{
-			$this->db->order_by("id", "DESC");
+			$this->db->order_by("name", "ASC");
 			return $this->db->get("tb_lucas_genari_crudci_games")->result_array();
 		}
 
