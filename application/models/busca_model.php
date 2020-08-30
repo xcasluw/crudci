@@ -10,6 +10,6 @@ class Busca_model extends CI_Model
 
 		$busca = $this->input->post('busca');
 		$this->db->like('name', $busca);
-		return $this->db->get("tb_lucas_genari_crudci_games")->result_array();
+		return $this->db->get("tb_games")->result_array();
 	}
 }

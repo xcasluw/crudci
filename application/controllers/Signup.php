@@ -17,7 +17,7 @@ class Signup extends CI_Controller
 			"name" => $_POST["name"],
 			"country" => $_POST["country"],
 			"email" => $_POST["email"],
-			"password_hash" => md5($_POST["password"])
+			"password" => md5($_POST["password"])
 		);
 
 		$this->users_model->store($user);

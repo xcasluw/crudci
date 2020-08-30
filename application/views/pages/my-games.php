@@ -39,9 +39,9 @@
   
 <script>
 	function goDelete(id) {
-		var myUrl = 'games/edit/'+id;
+		
 		if(confirm("Deseja apagar este registro?")) {
-			window.location.href = 'games/destroy/'+id;
+			window.location.href = 'destroy/'+id;
 		} else {
 			alert("Registro não alterado");
 			return false;

@@ -33,8 +33,13 @@
 						<td><?= $game["category"] ?></td>
 						<td><?= $game["developer"] ?></td>
 						<td>
-							<a href="<?= base_url() ?>games/edit/<?= $game["id"] ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
-							<a href="javascript:goDelete(<?= $game['id'] ?>)" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+							<?php if($_SESSION["logged_user"]["id"] === $game["user_id"]) : ?>
+								<a href="<?= base_url() ?>games/edit/<?= $game["id"] ?>" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+								<a href="javascript:goDelete(<?= $game['id'] ?>)" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+							<?php else : ?>
+								<button disabled type="button" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+								<button disabled type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+							<?php endif; ?>
 						</td>
 					</tr>
 				<?php endforeach; ?>
